@@ -1,0 +1,21 @@
+:root {
+  --s-1: 0.5rem;
+  --s-2: calc(var(--s-1) * 2);
+  --s-3: calc(var(--s-2) + var(--s-1));
+  --s-4: calc(var(--s-3) + var(--s-1));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  margin: var(--s-2);
+}
