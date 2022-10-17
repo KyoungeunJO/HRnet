@@ -15,15 +15,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 2rem 1rem;
 }
 
 .title {
   margin: var(--s-2);
 }
 
-form {
-  margin: var(--s-4) 0;
+.form {
+  /* margin: var(--s-4) 0; */
   display: flex;
   flex-direction: column;
   gap: var(--s-2);
+}
+
+.logo {
+  width: 200px;
+}
+
+.t-margin {
+  margin-top: var(--s-4);
+}
+
+.p-2 {
+  padding: var(--s-2);
 }

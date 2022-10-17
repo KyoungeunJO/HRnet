@@ -1,0 +1,26 @@
+dialog {
+    padding: 10px;
+    position: fixed;
+    inset: 0;
+    width: 50%;
+    margin: auto;
+    overflow: visible;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+body:has(dialog[open]) {
+    overflow-y: hidden;
+}
+
+dialog > button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    border: 0;
+    font-size: .5rem;
+}
