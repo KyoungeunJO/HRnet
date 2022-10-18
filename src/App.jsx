@@ -49,9 +49,9 @@ function App() {
 
   return (
     <>
-      <img className='logo' src={logo} alt='logo Wealth Health' />
+      <img className='logo' src={logo} alt='logo Wealth Health' aria-labelledby='logo Wealth Health' />
       <h1 className="title">HRnet</h1>
-      <Link to='/employee-list' className='link'>View Current Employees</Link>
+      <Link to='/employee-list' className='link' data-message="This is to go the Employees page">View Current Employees</Link>
       <h2 className="title t-margin">Create Employee</h2>
 
       <form action="#" className='form' onSubmit={handleSubmit}>
@@ -64,11 +64,11 @@ function App() {
           <legend>Adress</legend>
           <InputForm type='text' label='Street' />
           <InputForm type='text' label='City' />
-          <InputForm type='select' label='State' selectOptions={states} />
+          <InputForm type='select' label='State' selectOptions={states} aria-controls="state-menu"/>
           <InputForm type='text' label='Zip Code' />
         </fieldset>
 
-          <InputForm type='select' label='Department' selectOptions={departments} />
+          <InputForm type='select' label='Department' selectOptions={departments} aria-controls="department-menu"/>
           <InputForm type='submit' label='Save' />
       </form>
 

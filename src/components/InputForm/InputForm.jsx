@@ -34,7 +34,7 @@ function InputForm({ type, label, selectOptions }) {
     return (
         <div className='input-form'>
             <label htmlFor={id}>{label}</label>
-            <input id={id} type={type} />
+            <input id={id} type={type} name={id} />
         </div>
     )
 

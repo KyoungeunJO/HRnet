@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import Table from './components/Table/Table'
+import Table from '@kyoungeun/react-table'
+import './style/Table.css'
 
 function Employee() {
 
@@ -20,7 +21,7 @@ function Employee() {
    <>
     <h1 className="title">Current Employees</h1>
     <Table data={employees} headers={headers} />
-    <Link to='/' className='link'>Home</Link>
+    <Link to='/' className='link' data-message="This is to go the home page">Home</Link>
    </>
   )
 }

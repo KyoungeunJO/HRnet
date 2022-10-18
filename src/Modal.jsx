@@ -7,7 +7,7 @@ function Modal() {
 
     return (
         <dialog id='modal'>
-            <p>Employee created !</p>
+            <p >Employee created !</p>
             <button onClick={handleClick}>X</button>
         </dialog>
     )
