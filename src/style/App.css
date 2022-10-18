@@ -44,3 +44,17 @@
 select, input, button {
   border-radius: 5px;
 }
+
+.link {
+  text-decoration: none;
+  background-color: #548118;
+  color:white;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+fieldset {
+  border-radius: 5px;
+}

@@ -7,6 +7,7 @@ function Table({headers, data}) {
     const [elements, setElements] = useState(data)
     const [nbToShow, setNbToShow] = useState(10)
 
+    const NbPages = Math.ceil(data?.length / nbToShow)
     let nbOfRows = 0
 
     const sortRows = (index, event) => {
@@ -94,7 +95,6 @@ function Table({headers, data}) {
     }
 
     const displayPages = () => {
-        const NbPages = Math.ceil(data?.length / nbToShow)
         let pages = []
         for (let i=1; i <= NbPages; i++) {
             pages.push(
@@ -104,7 +104,16 @@ function Table({headers, data}) {
         return pages
     }
 
-    const movePage = (n) => setPage(page+n)
+    const movePage = (n) => {
+        let toPage = page + n
+
+        if (toPage < 1) { 
+            toPage = 1 
+        } else if (toPage > NbPages) {
+            toPage = NbPages
+        }
+        setPage(toPage)
+    }
     const moveToPage = (n) => setPage(n)
 
     return (
@@ -127,7 +136,7 @@ function Table({headers, data}) {
             </div>
 
             <table>
-                <thead>
+                <thead className='head-table'>
                     <tr role="row">
                         {columnHeaders}
                     </tr>
@@ -140,12 +149,12 @@ function Table({headers, data}) {
 
             <div className='flex-spaced'>
                 <p>Showing {nbOfRows} of {elements.length} entries</p>
-                <div>
+                <div className='nb-page'>
                     {displayPages()}
                 </div>
                 <div className='buttons-page'>
-                    <button className="button-page" onClick={() => movePage(-1)}>Previous</button>
-                    <button className="button-page" onClick={() => movePage(1)}>Next</button>
+                    <button className={`button-page btn-prev ${page == 1 ? 'btn-disabled' : ''}`} onClick={() => movePage(-1)}>Previous</button>
+                    <button className={`button-page btn-next ${page == NbPages ? 'btn-disabled' : ''}`} onClick={() => movePage(1)}>Next</button>
                 </div>
             </div>
 

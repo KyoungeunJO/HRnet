@@ -51,7 +51,7 @@ function App() {
     <>
       <img className='logo' src={logo} alt='logo Wealth Health' />
       <h1 className="title">HRnet</h1>
-      <Link to='/employee-list'>View Current Employees</Link>
+      <Link to='/employee-list' className='link'>View Current Employees</Link>
       <h2 className="title t-margin">Create Employee</h2>
 
       <form action="#" className='form' onSubmit={handleSubmit}>

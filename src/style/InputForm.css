@@ -3,3 +3,12 @@
     flex-direction: column;
     gap: var(--s-1);
 }
+
+#save {
+padding: 5px;
+background-color: #548118;
+color: white;
+border-radius: 5px;
+border-color: #6fac20;
+cursor: pointer;
+}

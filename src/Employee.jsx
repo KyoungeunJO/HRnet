@@ -20,7 +20,7 @@ function Employee() {
    <>
     <h1 className="title">Current Employees</h1>
     <Table data={employees} headers={headers} />
-    <Link to='/'>Home</Link>
+    <Link to='/' className='link'>Home</Link>
    </>
   )
 }

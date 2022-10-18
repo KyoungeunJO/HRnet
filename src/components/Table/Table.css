@@ -1,9 +1,14 @@
+.head-table {
+    background-color: #336600;
+    color: white;
+}
+
 .odd {
-    background-color: aquamarine;
+    background-color: #d9ffb3;
 }
 
 .even {
-    background-color: limegreen;
+    background-color: #f2ffe6;
 }
 
 .full-width {
@@ -38,6 +43,12 @@ td {
     height: 2rem;
 }
 
+.nb-page {
+    display: flex;
+    gap: 1rem;
+    padding: 5px;
+}
+
 .page-active {
     font-weight: bold;
 }
@@ -53,6 +64,7 @@ td {
     color: white;
     border-radius: 5px;
     border-color: #6fac20;
+    cursor: pointer;
 }
 
 .sorting {
@@ -71,4 +83,10 @@ td {
     background-image: url(https://cdn.datatables.net/1.10.21/images/sort_desc.png);
     background-repeat: no-repeat;
     background-position: right;
+}
+
+.btn-disabled {
+    background-color: lightgray;
+    color: darkgray;
+    pointer-events: none;
 }
