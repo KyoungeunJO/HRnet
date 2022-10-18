@@ -6,6 +6,15 @@
     background-color: limegreen;
 }
 
+.full-width {
+    width: 100%;
+}
+
+.full-width > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .flex-spaced {
     display: flex;
     justify-content: space-between;
@@ -17,6 +26,7 @@ label {
 
 table {
     margin: 1rem 0;
+    width: 100%;
 }
 
 .row-empty {
@@ -30,4 +40,35 @@ td {
 
 .page-active {
     font-weight: bold;
+}
+
+.buttons-page {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.button-page {
+    padding: 5px;
+    background-color: #548118;
+    color: white;
+    border-radius: 5px;
+    border-color: #6fac20;
+}
+
+.sorting {
+    background-image: url(https://cdn.datatables.net/1.10.21/images/sort_both.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.sorting-asc {
+    background-image: url(https://cdn.datatables.net/1.10.21/images/sort_asc.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.sorting-desc {
+    background-image: url(https://cdn.datatables.net/1.10.21/images/sort_desc.png);
+    background-repeat: no-repeat;
+    background-position: right;
 }

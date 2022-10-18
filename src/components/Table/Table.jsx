@@ -9,14 +9,51 @@ function Table({headers, data}) {
 
     let nbOfRows = 0
 
+    const sortRows = (index, event) => {
+        const target = event.target
+        const currentClass = target.classList[0]
+        if (currentClass == 'sorting') {
+            target.classList.remove('sorting')
+            target.classList.add('sorting-asc')
+            sortElements('asc', index)
+        } else if (currentClass == 'sorting-asc') {
+            target.classList.remove('sorting-asc')
+            target.classList.add('sorting-desc')
+            sortElements('desc', index)
+        } else if (currentClass == 'sorting-desc') {
+            target.classList.remove('sorting-desc')
+            target.classList.add('sorting-asc')
+            sortElements('asc', index)
+        }
+    }
+
+    const sortElements = (direction, index) => {
+        if (elements.length == 0) { return }
+
+        const props = Object.keys(elements[0])
+        const prop = props[index]
+        let newElements
+
+        if (direction == 'asc') {
+            newElements = elements.sort((a, b) => a[prop] > b[prop] ? 1 : -1)
+        }
+
+        if (direction == 'desc') {
+            newElements = elements.sort((a, b) => a[prop] < b[prop] ? 1 : -1)
+        }
+
+        setElements([...newElements])
+    }
+
     const columnHeaders = headers.map((head, index) => {
-        return <th key={`h-${index}`}>{head}</th>
+        return <th key={`h-${index}`} className='sorting' onClick={(event) => sortRows(index, event)}>
+                    {head}
+                </th>
     })
 
     const sliceElements = (els) => {
         const start = (page-1) * nbToShow
         const end = start + nbToShow
-        console.log(start, end);
         return els.slice(start, end)
     }
 
@@ -71,7 +108,7 @@ function Table({headers, data}) {
     const moveToPage = (n) => setPage(n)
 
     return (
-        <div>
+        <div className='full-width'>
             <div className="flex-spaced">
                 <label>
                     Show
@@ -106,9 +143,9 @@ function Table({headers, data}) {
                 <div>
                     {displayPages()}
                 </div>
-                <div>
-                    <button onClick={() => movePage(-1)}>Previous</button>
-                    <button onClick={() => movePage(1)}>Next</button>
+                <div className='buttons-page'>
+                    <button className="button-page" onClick={() => movePage(-1)}>Previous</button>
+                    <button className="button-page" onClick={() => movePage(1)}>Next</button>
                 </div>
             </div>
 

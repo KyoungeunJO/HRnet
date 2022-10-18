@@ -40,3 +40,7 @@
 .p-2 {
   padding: var(--s-2);
 }
+
+select, input, button {
+  border-radius: 5px;
+}
