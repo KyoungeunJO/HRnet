@@ -22,13 +22,13 @@ function App() {
     const employee = {
       firstName: document.getElementById('first-name').value,
       lastName: document.getElementById('last-name').value,
-      dateOfBirth: document.getElementById('date-of-birth').value,
       startDate: document.getElementById('start-date').value,
-      state: document.getElementById('state').value,
-      street: document.getElementById('street').value,
-      zipCode: document.getElementById('zip-code').value,
       department: document.getElementById('department').value,
+      dateOfBirth: document.getElementById('date-of-birth').value,
+      street: document.getElementById('street').value,
       city: document.getElementById('city').value,
+      state: document.getElementById('state').value,
+      zipCode: document.getElementById('zip-code').value,
     }
     if (employees) {
       localStorage.setItem('employees', JSON.stringify([...employees, employee]))

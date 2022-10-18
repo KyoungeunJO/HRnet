@@ -1,0 +1,33 @@
+.odd {
+    background-color: aquamarine;
+}
+
+.even {
+    background-color: limegreen;
+}
+
+.flex-spaced {
+    display: flex;
+    justify-content: space-between;
+}
+
+label {
+    margin-right: 5px;
+}
+
+table {
+    margin: 1rem 0;
+}
+
+.row-empty {
+    text-align: center;
+    background-color: lightgrey;
+}
+
+td {
+    height: 2rem;
+}
+
+.page-active {
+    font-weight: bold;
+}
